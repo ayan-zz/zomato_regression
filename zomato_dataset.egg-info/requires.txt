@@ -1,0 +1,14 @@
+pandas
+setuptools
+numpy
+seaborn
+matplotlib
+scikit-learn
+statistics
+dill
+xgboost
+flask
+cassandra-driver
+touch
+pymongo
+datetime
