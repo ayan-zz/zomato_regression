@@ -6,7 +6,7 @@ from src.exception import CustomException
 from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 from src.components.data_transformation import datatransformation,datatransformationconfig
-#from src.components.model_trainer import modeltrainer,modeltrainingconfig
+from src.components.model_trainer import modeltrainer,modeltrainingconfig
 from dataclasses import dataclass
 
 
@@ -62,8 +62,8 @@ if __name__ =='__main__':
     data_trans=datatransformation()
     train_arr,test_arr,_=data_trans.initiate_data_transformation(train_data,test_data)
 
-   # model_train=modeltrainer()
-    #model_train.initiate_model_training(train_arr,test_arr)
+    model_train=modeltrainer()
+    model_train.initiate_model_training(train_arr,test_arr)
 
     
 
