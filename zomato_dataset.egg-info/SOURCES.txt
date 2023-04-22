@@ -1,5 +1,16 @@
 README.md
 setup.py
+src/__init__.py
+src/exception.py
+src/logging.py
+src/utils.py
+src/components/__init__.py
+src/components/data_ingestion.py
+src/components/data_transformation.py
+src/components/model_trainer.py
+src/pipeline/__init__.py
+src/pipeline/prediction_pipeline.py
+src/pipeline/training_pipeline.py
 zomato_dataset.egg-info/PKG-INFO
 zomato_dataset.egg-info/SOURCES.txt
 zomato_dataset.egg-info/dependency_links.txt
