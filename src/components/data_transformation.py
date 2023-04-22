@@ -4,13 +4,11 @@ import os,sys
 from src.logging import logging
 from src.exception import CustomException
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler,OrdinalEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
-from datetime import datetime
-from sklearn.pipeline import Pipeline
 from sklearn.base import TransformerMixin, BaseEstimator
-from src.utils import distance,save_object,time_to_float
+from src.utils import save_object,time_to_float
 from dataclasses import dataclass
 
 @dataclass
@@ -64,29 +62,10 @@ class datatransformation:
             df_train=pd.read_csv(train_path)
             df_test=pd.read_csv(test_path)
 
-            #ddt=df_train['Time_Order_picked'].values
-            #df_train['Time_Order_picked'] = np.where(np.array([ddt.count(':') == 2 for ddt in ddt]),'00:00',ddt)
-            #dds=df_test['Time_Order_picked'].values
-            #df_test['Time_Order_picked'] = np.where(np.array([dds.count(':') == 2 for dds in dds]),'00:00',dds)
-            #dos=df_test['Time_Orderd'].values
-            #df_test['Time_Orderd'] = np.where(np.array([dos.count(':') == 2 for dos in dds]),'00:00',dos) 
-            #dot=df_train['Time_Orderd'].values
-            #df_train['Time_Orderd'] = np.where(np.array([dot.count(':') == 2 for dot in dds]),'00:00',dot)          
-
-
             df_train['Time_Orderd'] = df_train.apply(lambda row:time_to_float(row['Time_Orderd']),axis=1)
             df_test['Time_Orderd'] = df_test.apply(lambda row:time_to_float(row['Time_Orderd']),axis=1)
             df_train['Time_Order_picked'] = df_train.apply(lambda row:time_to_float(row['Time_Order_picked']),axis=1)
             df_test['Time_Order_picked'] = df_train.apply(lambda row:time_to_float(row['Time_Order_picked']),axis=1)
-
-            #df_train['distance'] = df_train.apply(lambda row:distance(row['Restaurant_latitude'],
-                                                            #row['Restaurant_longitude'],
-                                                            #row['Delivery_location_latitude'],
-                                                            #row['Delivery_location_longitude']),axis=1)
-            #df_test['distance'] = df_test.apply(lambda row:distance(row['Restaurant_latitude'],
-                                                            #row['Restaurant_longitude'],
-                                                            #row['Delivery_location_latitude'],
-                                                            #row['Delivery_location_longitude']),axis=1)
 
             logging.info("Read Train ans test data completed")
             logging.info("obtaining preprocesser object")

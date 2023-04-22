@@ -40,7 +40,6 @@ class modeltrainer:
             best_model = models[best_algo]
             print('\n')
             print(f'The best ML alorithm for this regression problem is {best_algo} having R2-score of: {best_score}')
-            #b_m=list(models.values())[list(model_report.values()).index(best_score)]
 
             logging.info('model training ended and saving the model path')
 

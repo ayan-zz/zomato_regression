@@ -6,7 +6,6 @@ matplotlib
 scikit-learn
 statistics
 dill
-xgboost
 flask
 touch
 pymongo

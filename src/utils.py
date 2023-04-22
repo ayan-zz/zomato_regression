@@ -1,40 +1,10 @@
 import os
 import sys
-
-import numpy as np 
-import pandas as pd
 import dill
-from sklearn.metrics import r2_score,accuracy_score, classification_report
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import GridSearchCV
-import math
+from sklearn.metrics import r2_score
 from src.exception import CustomException
 from src.logging import logging
-
-def distance(lat1,lon1,lat2,lon2):
-    try:
-        logging.info('calculation for finding distance from lat lon initiated')
-        # Radius of the Earth in kilometers
-        radius = 6371
-
-        # Convert latitude and longitude to radians
-        lat1, lon1, lat2, lon2 = map(math.radians, [lat1,lon1,lat2,lon2])
-
-        # Calculate the differences between the latitudes and longitudes
-        dlat = lat2 - lat1
-        dlon = lon2 - lon1
-
-        # Calculate the Haversine formula
-        a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
-        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-        distance = radius * c
-        logging.info('calculation ended')
-        return distance
-    
-    except Exception as e:
-        logging.info('error in calculation')
-        raise CustomException(e,sys)
-    
+   
 def time_to_float(time_ordered):
     try:
         ddt=time_ordered

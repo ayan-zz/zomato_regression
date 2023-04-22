@@ -1,11 +1,6 @@
-import os,sys
-import pandas as pd
-import numpy as np
 from src.components.data_ingestion import dataingestion
-from src.components.data_trasformation import datatransformation
+from src.components.data_transformation import datatransformation
 from src.components.model_trainer import modeltrainer
-from src.logging import logging
-from src.exception import CustomException
 
 if '__name__'=='__main__':
     obj=dataingestion()
