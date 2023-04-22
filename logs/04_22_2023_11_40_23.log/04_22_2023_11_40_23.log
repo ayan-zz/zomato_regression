@@ -1,0 +1,4 @@
+[ 2023-04-22 11:40:26,165 ] 24 root - INFO - data ingestion started
+[ 2023-04-22 11:40:47,480 ] 39 root - INFO - data ingestion frm database ended
+[ 2023-04-22 11:40:48,715 ] 45 root - INFO - train test split initiated
+[ 2023-04-22 11:40:50,329 ] 50 root - INFO - data ingestion ended
