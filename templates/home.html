@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Prediction for food Delivery</title>
+</head>
+
+<h2 ALIGN="CENTER">FOOD DELIVERY TIME PREDICTION </h2>
+
+<form action="{{url_for('predict_datapoint')}}" method="post">
+    <table border="0" align="center">
+<tbody>
+
+<tr>
+<td><label for="ID">ID: </label></td>
+<td><input id="ID" maxlength="50" name="ID" type="text"/></td>
+</tr>
+
+<tr>
+    <td><label for="Delivery_person_ID">Delivery_person_ID: </label></td>
+    <td><input id="Delivery_person_ID" maxlength="50" name="Delivery_person_ID" type="text" /></td>
+</tr>
+
+<tr>
+    <td><label for="Delivery_person_Age">Delivery_person_Age: </label></td>
+    <td><input id="Delivery_person_Age" maxlength="70" name="Delivery_person_Age" type="text" placeholder="Enter int type data"/></td>
+</tr>
+
+<tr>
+    <td><label for="Delivery_person_Ratings">Delivery_person_Ratings: </label></td>
+    <td><input id="Delivery_person_Ratings" maxlength="50" name="Delivery_person_Ratings" type="number" type="number" min="1" max="10" step="0.1" placeholder="Enter float value" /></td>
+</tr>
+
+<tr>
+    <td><label for="Restaurant_latitude">Restaurant Latitude: </label></td>
+    <td><input id="Restaurant_latitude" maxlength="50" name="Restaurant_latitude" type="number"min="1" max="100" step="0.0000001" /></td>
+</tr>
+
+<tr>
+    <td><label for="Restaurant_longitude">Restaurant Longitude: </label></td>
+    <td><input id="Restaurant_longitude" maxlength="50" name="Restaurant_longitude" type="number"min="1" max="100" step="0.0000001" /></td>
+</tr>
+
+<tr>
+    <td><label for="Delivery_location_latitude">Delivery Location Latitude: </label></td>
+    <td><input id="Delivery_location_latitude" maxlength="50" name="Delivery_location_latitude" type="number"min="1" max="100" step="0.0000001" /></td>
+</tr>
+
+<tr>
+    <td><label for="Delivery_location_longitude">Delivery Location Longitude: </label></td>
+    <td><input id="Delivery_location_longitude" maxlength="50" name="Delivery_location_longitude" type="number"min="1" max="100" step="0.0000001" /></td>
+</tr>
+
+<tr>
+    <td><label for="Order_Date">Order Date: </label></td>
+    <td><input id="Order_Date" name="Order_Date" type="date" min="1995-01-01" max="2022-12-31"/></td>
+</tr>
+<tr>
+    <td><label for="Time_Orderd">Time Orderd:</label></td>
+    <td><input id="Time_Orderd" maxlength="50" name="Time_Orderd" type="time" min="00:00" max="23:59" /></td>
+</tr>
+
+<tr>
+    <td><label for="Time_Order_picked">Time Order picked:</label></td>
+    <td><input id="Time_Order_picked" maxlength="50" name="Time_Order_picked" type="time" min="00:00" max="23:59" /></td>
+</tr>
+
+<tr>
+    <td><label for="Weather_conditions">Weather conditions:</label></td>
+    <td><select name="Weather_conditions" placeholder="Enter Type of Weather" required>
+        <option class="placeholder" selected disabled value="">Select Weather_conditions</option>
+        <option value="Fog">
+            Fog
+        </option>
+        <option value="Stormy">
+            Stormy
+        </option>
+        <option value="Cloudy">
+            Cloudy
+        </option>
+        <option value="Sandstorms">
+            Sandstorms
+        </option>
+        <option value="Windy">
+            Windy
+        </option>
+        <option value="Sunny">
+            Sunny
+        </option>
+    </select>
+</td>
+</tr>
+
+<tr>
+    <td><label for="Road_traffic_density">Road traffic density:</label></td>
+    <td><select class="form-control" name="Road_traffic_density" placeholder="Enter Type of Road Condition" required>
+        <option class="placeholder" selected disabled value="">Select Road_traffic_density</option>
+        <option value="Low">
+            Low
+        </option>
+        <option value="Jam">
+            Jam
+        </option>
+        <option value="Medium">
+            Medium
+        </option>
+        <option value="High">
+            High
+        </option>
+    </select>
+</td>
+</tr>
+
+<tr>
+    <td><label for="Type_of_order">Type of order:</label></td>
+    <td><select class="form-control" name="Type_of_order" placeholder="Enter Type of order" required>
+        <option class="placeholder" selected disabled value="">Select Type_of_order</option>
+        <option value="Snack">
+            Snack
+        </option>
+        <option value="Meal">
+            Meal
+        </option>
+        <option value="Drinks">
+            Drinks
+        </option>
+        <option value="Buffet">
+            Buffet
+        </option>
+    </select>
+</td>
+</tr>
+
+<tr>
+    <td><label for="Vehicle_condition">Vehicle condition:</label></td>
+    <td><select class="form-control" name="Vehicle_condition" placeholder="Enter Vehicle Condition" required>
+        <option class="placeholder" selected disabled value="">Select Vehicle_condition</option>
+        <option value="0">
+            Good
+        </option>
+        <option value="1">
+            Average
+        </option>
+        <option value="2">
+            Bad
+        </option>
+        <option value="3">
+            Worse
+        </option>
+    </select>
+</td>
+</tr>
+
+<tr>
+    <td><label for="Type_of_vehicle">Type of vehicle:</label></td>
+    <td><select class="form-control" name="Type_of_vehicle" placeholder="Enter Type of Vehicle" required>
+        <option class="placeholder" selected disabled value="">Select Type_of_vehicle</option>
+        <option value="motorcycle">
+            motorcycle
+        </option>
+        <option value="scooter">
+            scooter
+        </option>
+        <option value="electric_scooter">
+            electric_scooter
+        </option>
+        <option value="bicycle">
+            bicycle
+        </option>
+    </select>
+    </td>
+</tr>
+
+<tr>
+    <td><label for="multiple_deliveries">Multiple deliveries:</label></td>
+    <td><select class="form-control" name="multiple_deliveries" placeholder="Enter multiple_deliveries" required>
+        <option class="placeholder" selected disabled value="">Select multiple_deliveries</option>
+        <option value="0.0">
+            0
+        </option>
+        <option value="1.0">
+            1
+        </option>
+        <option value="2.0">
+            2
+        </option>
+        <option value="3.0">
+            3
+        </option>
+    </select>
+    </td>
+</tr>
+
+<tr>
+    <td><label for="Festival">Festival:</label></td>
+    <td><select class="form-control" name="Festival" placeholder="Enter Festival" required>
+        <option class="placeholder" selected disabled value="">Select Festival</option>
+        <option value="No">
+            No
+        </option>
+        <option value="Yes">
+            Yes
+        </option>
+    </select>
+    </td>
+</tr>
+
+<tr>
+    <td><label for="City">City:</label></td>
+    <td><select class="form-control" name="City" placeholder="Enter City" required>
+        <option class="placeholder" selected disabled value="">Select City</option>
+        <option value="Metropolitian">
+            Metropolitian
+        </option>
+        <option value="Urban">
+            Urban
+        </option>
+        <option value="Semi-Urban">
+            Semi-Urban
+        </option>
+    </select>
+    </td>
+</tbody>
+</tr>
+
+<tr>
+<td><div class="mb-3">
+    <input class="btn btn-primary" type="submit" value="Predict time" required />
+</div>
+</td></tr>
+<td><div>
+    <h3 ALIGN="CENTER">YOUR FOOD WILL BE DELIVERED IN {{results}} MINS</h3>
+</td></div>
+</form>
+</div>
+</body>
+</html>
