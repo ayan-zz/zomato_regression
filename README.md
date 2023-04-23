@@ -9,4 +9,5 @@
 ## 7. app.py and templates: Create a api for getting the data through a form in html and pushing to prediction pipeline for calculation.
 ## 8. Dockerfile: Create a docker file and build an image which can be used as CI/CD integration with AWS or Azure. 
 ## 9. Check Github for git actions for any change and deployment in any cloud platform. ##
-
+![Alt text](Untitled2.png)
+![Alt text](Untitled1.webp)
