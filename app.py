@@ -34,6 +34,8 @@ def predict_datapoint():
             Festival=str(request.form.get('Festival')),
             City=str(request.form.get('City')))
         
+
+        
         final_data=data.get_dataframe()
         print(final_data)
         predict_pipeline=Predictionpipeline()
