@@ -136,12 +136,5 @@ class TimeTransformer(BaseEstimator, TransformerMixin):
         return [[time_float] for time_float in time_floats]
 
 
-        
-
-
-
-    
-
-
 
 
